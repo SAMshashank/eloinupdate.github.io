@@ -963,8 +963,15 @@ font-size: 20px;
   }
 }
 .gio a{
-    text-decoration: none;
-    
+ 
+        text-decoration: none;
+        color:  #730bec ;
+
+}
+.gio a:hover
+{
+    color: #0a2a43;
+   
 }
 /* footer */
 #footer{
