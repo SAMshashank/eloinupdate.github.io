@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>announcement</title>
+  <link rel="stylesheet" href="css\fruit.css?version=1">
+</head>
+<body>
+  <section>
+    <div class="bg"></div>
+    <header>
+      <a href="#" class="logo">ELOIN habit</a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="#" class="active">announcement!</a></li>
+        <li><a href="#">Meme post</a></li>
+        <li><a href="#">fruits benefits </a></li>
+        <li><a href="index.html">Back to HOME</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>Buy more and Eat Fresh Everyday </h2>
+       
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit accusamus eius harum culpa tempora quas! Maxime vero dolore consectetur sapiente molestiae incidunt nostrum similique fugiat ut, rerum nulla in non maiores voluptate nisi qui voluptates.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="imgBox">
+        <img src="fruitimg\apple.png" class="fruits">
+      </div>
+    </div>
+    <ul class="thumb">
+      <li data-text="Eloinpple" class="active"><img src="fruitimg\apple.png" onclick="imgSlider('fruitimg/apple.png');changeBgColor('#fc4a55')"></li>
+      <li data-text="Eloinango"><img src="fruitimg\mango.png" onclick="imgSlider('fruitimg/mango.png');changeBgColor('#ffcc02')"></li>
+      <li data-text="Eloinmelon"><img src="fruitimg\watermelon.png" onclick="imgSlider('fruitimg/watermelon.png');changeBgColor('#92ba3c')"></li>
+      <li data-text="Eloingon Fruits"><img src="fruitimg\dragonFruits.png" onclick="imgSlider('fruitimg/dragonFruits.png');changeBgColor('#fb6cb2')"></li>
+      <li data-text="Eloineapple"><img src="fruitimg\pineApple.png" onclick="imgSlider('fruitimg/pineApple.png');changeBgColor('#ffb42b')"></li>
+    </ul>
+    <ul class="sci">
+      <li><a href="#"><img src="fruitimg\facebook.png"></a></li>
+      <li><a href="#"><img src="fruitimg\twitter.png"></a></li>
+      <li><a href="#"><img src="fruitimg\instagram.png"></a></li>
+    </ul>
+  </section>
+
+  <script>
+
+    let menuToggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    menuToggle.onclick = function(){
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+
+    // change image on click
+    function imgSlider(anything){
+      document.querySelector('.fruits').src = anything;
+    }
+
+    // change background color
+    function changeBgColor(color){
+      const bg = document.querySelector('.bg');
+      bg.style.background = color;
+    }
+
+    // add active class in selected thmbnails
+    let el = document.querySelectorAll('.thumb li');
+    for (let i = 0; i < el.length; i++){
+      el[i].onclick = function(){
+        var c = 0;
+        while (c < el.length){
+          el[c++].className = 'check';
+        }
+        el[i].className = 'check active';
+      }
+    }
+  </script>
+</body>
+</html>
